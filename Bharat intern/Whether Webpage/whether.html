@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Interactive Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #cloudImage {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Interactive Website</h1>
+        <p>Welcome to your website!</p>
+    </header>
+
+    <section>
+        <h2>Main Content</h2>
+        <p>This is the main content of your website.</p>
+
+        <form id="locationForm">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city">
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter your state">
+
+            <button type="button" onclick="updateLocation()">Update Location</button>
+        </form>
+
+        <img id="cloudImage" src="download (1).jfif" alt="Cloud Image">
+
+        <p id="locationText">Current Location: Default City, Default State</p>
+        <p>Good Whether in your Area</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Interactive Website</p>
+    </footer>
+
+    <script>
+        function updateLocation() {
+            var city = document.getElementById('city').value;
+            var state = document.getElementById('state').value;
+
+            var locationText = document.getElementById('locationText');
+            locationText.textContent = 'Current Location: ' + (city || 'Default City') + ', ' + (state || 'Default State');
+        }
+    </script>
+</body>
+</html>
